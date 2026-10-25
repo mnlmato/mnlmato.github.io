@@ -6,6 +6,7 @@ ROOT = Path(sys.argv[1])
 BASE = "https://mnlmato.github.io"
 PLAY = "https://play.google.com/store/apps/details?id=com.playink.paint.kids"
 VIDEO = "_KG6YSzw7Uo"
+SITE_NAME = "Manuel Mato"
 LASTMOD = "2026-10-25"
 
 T = {
@@ -165,7 +166,7 @@ def page(lang):
 <link rel="icon" type="image/png" href="{ASSETS}/img/icon-64.png">
 <link rel="apple-touch-icon" href="{ASSETS}/img/icon-180.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Playink">
+<meta property="og:site_name" content="{SITE_NAME}">
 <meta property="og:title" content="{t["title"]}">
 <meta property="og:description" content="{t["desc"]}">
 <meta property="og:url" content="{url}">
@@ -281,6 +282,14 @@ def page(lang):
 """
 
 
+WEBSITE = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": SITE_NAME,
+    "alternateName": ["mnlmato", "mnlmato.github.io"],
+    "url": BASE + "/",
+}
+
 PERSON = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -299,11 +308,13 @@ HOME = f"""<!doctype html>
 <meta name="description" content="Manuel Mato, Android developer. Apps on Google Play, including Playink, a scratch art app for kids with a holographic foil.">
 <link rel="canonical" href="{BASE}/">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="{SITE_NAME}">
 <meta property="og:title" content="Manuel Mato – Android developer">
 <meta property="og:description" content="Apps I build and publish on Google Play, including Playink.">
 <meta property="og:url" content="{BASE}/">
 <meta property="og:image" content="{BASE}{ASSETS}/img/share-en.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{json.dumps(WEBSITE, ensure_ascii=False)}</script>
 <script type="application/ld+json">{json.dumps(PERSON, ensure_ascii=False)}</script>
 <meta name="theme-color" content="#0b0a10">
 <link rel="icon" type="image/png" href="{ASSETS}/img/icon-64.png">
