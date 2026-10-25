@@ -5,6 +5,12 @@ from pathlib import Path
 ROOT = Path(sys.argv[1])
 BASE = "https://mnlmato.github.io"
 PLAY = "https://play.google.com/store/apps/details?id=com.playink.paint.kids"
+
+
+def play_link(lang):
+    # Play Console groups listing visits and installs by these UTM values (G13).
+    referrer = f"utm_source%3Dmnlmato.github.io%26utm_medium%3Dwebsite%26utm_campaign%3Dplayink-site-{lang}"
+    return f"{PLAY}&referrer={referrer}"
 VIDEO = "_KG6YSzw7Uo"
 SITE_NAME = "Manuel Mato"
 LASTMOD = "2026-10-25"
@@ -198,7 +204,7 @@ def page(lang):
       <h1>{t["h1a"]} <span class="foil-text">{t["h1b"]}</span></h1>
       <p class="lede">{t["lede"]}</p>
       <div class="cta-row">
-        <a class="play-badge" href="{PLAY}"><img class="badge-{lang}" src="{ASSETS}/img/badge-{lang}.png" alt="{t["badge_alt"]}" width="646" height="250"></a>
+        <a class="play-badge" href="{play_link(lang)}"><img class="badge-{lang}" src="{ASSETS}/img/badge-{lang}.png" alt="{t["badge_alt"]}" width="646" height="250"></a>
         <p class="meta">{t["meta"]}</p>
       </div>
     </div>
