@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Playink: Scratch Art for Kids</title>
+<meta name="description" content="Scratch art drawing for kids on Android: draw with a finger and reveal a holographic foil that shines as you tilt the phone. No ads, no in-app purchases, no account.">
+<link rel="canonical" href="https://mnlmato.github.io/playink/">
+<link rel="alternate" hreflang="en" href="https://mnlmato.github.io/playink/">
+<link rel="alternate" hreflang="es" href="https://mnlmato.github.io/playink/es/">
+<link rel="alternate" hreflang="x-default" href="https://mnlmato.github.io/playink/">
+<meta name="theme-color" content="#0b0a10">
+<link rel="icon" type="image/png" href="/playink/assets/img/icon-64.png">
+<link rel="apple-touch-icon" href="/playink/assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playink">
+<meta property="og:title" content="Playink: Scratch Art for Kids">
+<meta property="og:description" content="Scratch art drawing for kids on Android: draw with a finger and reveal a holographic foil that shines as you tilt the phone. No ads, no in-app purchases, no account.">
+<meta property="og:url" content="https://mnlmato.github.io/playink/">
+<meta property="og:image" content="https://mnlmato.github.io/playink/assets/img/share-en.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/playink/assets/fonts/fredoka-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/playink/assets/fonts/atkinson-hyperlegible-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/playink/assets/playink.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Playink", "operatingSystem": "Android", "applicationCategory": "EntertainmentApplication", "description": "Scratch art drawing for kids on Android: draw with a finger and reveal a holographic foil that shines as you tilt the phone. No ads, no in-app purchases, no account.", "url": "https://mnlmato.github.io/playink/", "installUrl": "https://play.google.com/store/apps/details?id=com.playink.paint.kids", "image": "https://mnlmato.github.io/playink/assets/img/icon-256.png", "inLanguage": ["en", "es"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Manuel Mato", "url": "https://www.linkedin.com/in/manuelmatomarino"}}</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/playink/"><img src="/playink/assets/img/icon-64.png" alt="" width="40" height="40">Playink</a>
+  <nav class="lang" aria-label="Language">
+    <a href="/playink/" hreflang="en" lang="en" aria-current="page">EN</a>
+    <a href="/playink/es/" hreflang="es" lang="es">ES</a>
+  </nav>
+</div></header>
+
+<main>
+  <div class="hero"><div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Scratch art for kids · Android</p>
+      <h1>Draw with your finger. <span class="foil-text">There's a hologram underneath.</span></h1>
+      <p class="lede">Playink turns your phone or tablet into magic scratch paper. Every stroke reveals a holographic foil that shines as you tilt your phone.</p>
+      <div class="cta-row">
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.playink.paint.kids"><img class="badge-en" src="/playink/assets/img/badge-en.png" alt="Get it on Google Play" width="646" height="250"></a>
+        <p class="meta">No ads · No purchases · No account</p>
+      </div>
+    </div>
+    <div class="sheet-frame">
+      <div class="sheet" id="sheet">
+        <canvas id="holo" aria-hidden="true"></canvas>
+        <canvas id="wax" role="img" aria-label="Black demo sheet: drag your finger or mouse to scratch it and see the hologram"></canvas>
+        <button type="button" class="sheet-reset" id="reset">New sheet</button>
+        <p class="sheet-hint" id="hint">Scratch here with your finger or mouse</p>
+      </div>
+    </div>
+  </div></div>
+
+  <section><div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The app</p>
+      <h2>Five backgrounds, and every drawing shines differently</h2>
+    </div>
+    <div class="shots">
+      <figure class="shot"><img src="/playink/assets/img/shavings.jpg" alt="A cat drawn on the black layer, showing the holographic foil" width="540" height="1040" loading="lazy"><figcaption>Feel the scratch: shavings fly</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-picker-glitter.jpg" alt="Background picker with holographic, glitter, gold and silver" width="540" height="1040" loading="lazy"><figcaption>Holographic, glitter, gold and silver</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-gold.jpg" alt="The same drawing on a gold background" width="540" height="1040" loading="lazy"><figcaption>Hidden colors that shine</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-silver.jpg" alt="The same drawing on a silver background" width="540" height="1040" loading="lazy"><figcaption>Tilt your phone, watch it shine</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-eye.jpg" alt="Preview of the whole hidden foil" width="540" height="1040" loading="lazy"><figcaption>Tap the eye to peek underneath</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it works</p>
+      <h2>Kids get it in seconds</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Draw</h3><p>Run your finger over the black layer.</p></li>
+      <li><h3>Reveal</h3><p>Every stroke uncovers the foil underneath.</p></li>
+      <li><h3>Tilt</h3><p>Move your phone and the light moves across the drawing.</p></li>
+      <li><h3>Switch it up</h3><p>The magic wand picks another foil.</p></li>
+    </ol>
+  </div></section>
+
+  <section><div class="wrap family">
+    <div class="section-head">
+      <p class="eyebrow">For families</p>
+      <h2>Made for a child to use on their own</h2>
+      <p>Playink is part of the Google Play Families program. It collects no personal data and there is nothing to buy.</p>
+    </div>
+    <div>
+      <ul class="promises">
+        <li><b>Ads</b><span>None</span></li>
+        <li><b>In-app purchases</b><span>None</span></li>
+        <li><b>Account</b><span>Not needed</span></li>
+        <li><b>Personal data</b><span>Not collected</span></li>
+        <li><b>Crash reports</b><span>Technical only, to fix bugs</span></li>
+        <li><b>Drawings</b><span>Saved to your gallery</span></li>
+      </ul>
+      <p class="family-note">The shiny backgrounds and video sharing need Android 13 or later. On earlier versions, every drawing reveals a color gradient.</p>
+    </div>
+  </div></section>
+
+  <section><div class="wrap video">
+    <div class="video-frame">
+      <button type="button" class="video-play" data-video="_KG6YSzw7Uo" data-title="Playink - Holographic scratch art for kids" aria-label="Play the Playink video">
+        <img src="/playink/assets/img/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
+      </button>
+    </div>
+    <div class="video-copy">
+      <p class="eyebrow">In motion</p>
+      <h2>The shine makes more sense on video</h2>
+      <p>The real app: scratching, switching foils and tilting the phone.</p>
+      <p class="small">The video plays from YouTube. Nothing loads from YouTube until you press play.</p>
+    </div>
+  </div></section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="legal"><p>Made by Manuel Mato, Android developer.</p><p class="tm">Google Play and the Google Play logo are trademarks of Google LLC.</p></div>
+  <nav aria-label="Links"><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a></nav>
+</div></footer>
+
+<script src="/playink/assets/playink.js" defer></script>
+</body>
+</html>

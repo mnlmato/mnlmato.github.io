@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Playink: Dibujar y rascar</title>
+<meta name="description" content="Dibujos para rascar en Android: pinta con el dedo y descubre una lámina holográfica que brilla al inclinar el móvil. Sin anuncios, sin compras y sin cuenta.">
+<link rel="canonical" href="https://mnlmato.github.io/playink/es/">
+<link rel="alternate" hreflang="en" href="https://mnlmato.github.io/playink/">
+<link rel="alternate" hreflang="es" href="https://mnlmato.github.io/playink/es/">
+<link rel="alternate" hreflang="x-default" href="https://mnlmato.github.io/playink/">
+<meta name="theme-color" content="#0b0a10">
+<link rel="icon" type="image/png" href="/playink/assets/img/icon-64.png">
+<link rel="apple-touch-icon" href="/playink/assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Playink">
+<meta property="og:title" content="Playink: Dibujar y rascar">
+<meta property="og:description" content="Dibujos para rascar en Android: pinta con el dedo y descubre una lámina holográfica que brilla al inclinar el móvil. Sin anuncios, sin compras y sin cuenta.">
+<meta property="og:url" content="https://mnlmato.github.io/playink/es/">
+<meta property="og:image" content="https://mnlmato.github.io/playink/assets/img/share-es.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/playink/assets/fonts/fredoka-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/playink/assets/fonts/atkinson-hyperlegible-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/playink/assets/playink.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Playink", "operatingSystem": "Android", "applicationCategory": "EntertainmentApplication", "description": "Dibujos para rascar en Android: pinta con el dedo y descubre una lámina holográfica que brilla al inclinar el móvil. Sin anuncios, sin compras y sin cuenta.", "url": "https://mnlmato.github.io/playink/es/", "installUrl": "https://play.google.com/store/apps/details?id=com.playink.paint.kids", "image": "https://mnlmato.github.io/playink/assets/img/icon-256.png", "inLanguage": ["en", "es"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Manuel Mato", "url": "https://www.linkedin.com/in/manuelmatomarino"}}</script>
+</head>
+<body>
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/playink/es/"><img src="/playink/assets/img/icon-64.png" alt="" width="40" height="40">Playink</a>
+  <nav class="lang" aria-label="Language">
+    <a href="/playink/" hreflang="en" lang="en">EN</a>
+    <a href="/playink/es/" hreflang="es" lang="es" aria-current="page">ES</a>
+  </nav>
+</div></header>
+
+<main>
+  <div class="hero"><div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Dibujos para rascar · Android</p>
+      <h1>Dibuja con el dedo. <span class="foil-text">Debajo hay un holograma.</span></h1>
+      <p class="lede">Playink convierte el móvil o la tablet en una lámina mágica para rascar. Cada trazo descubre una lámina holográfica que brilla al inclinar el móvil.</p>
+      <div class="cta-row">
+        <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.playink.paint.kids"><img class="badge-es" src="/playink/assets/img/badge-es.png" alt="Disponible en Google Play" width="646" height="250"></a>
+        <p class="meta">Sin anuncios · Sin compras · Sin cuenta</p>
+      </div>
+    </div>
+    <div class="sheet-frame">
+      <div class="sheet" id="sheet">
+        <canvas id="holo" aria-hidden="true"></canvas>
+        <canvas id="wax" role="img" aria-label="Lámina negra de demostración: arrastra el dedo o el ratón para rascarla y ver el holograma"></canvas>
+        <button type="button" class="sheet-reset" id="reset">Otra lámina</button>
+        <p class="sheet-hint" id="hint">Rasca aquí con el dedo o el ratón</p>
+      </div>
+    </div>
+  </div></div>
+
+  <section><div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">La app</p>
+      <h2>Cinco fondos, y cada dibujo brilla distinto</h2>
+    </div>
+    <div class="shots">
+      <figure class="shot"><img src="/playink/assets/img/shavings.jpg" alt="Gato dibujado sobre la capa negra que deja ver el holograma" width="540" height="1040" loading="lazy"><figcaption>Siente el rascado: saltan virutas</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-picker-glitter.jpg" alt="Selector de fondos con holográfico, purpurina, oro y plata" width="540" height="1040" loading="lazy"><figcaption>Holográfico, purpurina, oro y plata</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-gold.jpg" alt="El mismo dibujo con fondo de oro" width="540" height="1040" loading="lazy"><figcaption>Colores escondidos que brillan</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-silver.jpg" alt="El mismo dibujo con fondo de plata" width="540" height="1040" loading="lazy"><figcaption>Inclina el móvil y el brillo se mueve</figcaption></figure>
+      <figure class="shot"><img src="/playink/assets/img/hero-eye.jpg" alt="Vista previa de toda la lámina escondida" width="540" height="1040" loading="lazy"><figcaption>Pulsa el ojo y mira lo que hay debajo</figcaption></figure>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>Se aprende en segundos</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Dibuja</h3><p>Pasa el dedo por la capa negra.</p></li>
+      <li><h3>Descubre</h3><p>Cada trazo deja ver la lámina de debajo.</p></li>
+      <li><h3>Inclina</h3><p>Mueve el móvil y la luz recorre el dibujo.</p></li>
+      <li><h3>Cambia el fondo</h3><p>La varita mágica elige otra lámina.</p></li>
+    </ol>
+  </div></section>
+
+  <section><div class="wrap family">
+    <div class="section-head">
+      <p class="eyebrow">Para familias</p>
+      <h2>Pensada para que un niño la use solo</h2>
+      <p>Playink está en el programa Familias de Google Play. No recoge datos personales y no hay nada que comprar.</p>
+    </div>
+    <div>
+      <ul class="promises">
+        <li><b>Anuncios</b><span>Ninguno</span></li>
+        <li><b>Compras dentro de la app</b><span>Ninguna</span></li>
+        <li><b>Cuenta</b><span>No hace falta</span></li>
+        <li><b>Datos personales</b><span>No se recogen</span></li>
+        <li><b>Informes de fallos</b><span>Solo técnicos, para arreglar errores</span></li>
+        <li><b>Dibujos</b><span>Se guardan en tu galería</span></li>
+      </ul>
+      <p class="family-note">Los fondos brillantes y compartir como vídeo necesitan Android 13 o superior. En versiones anteriores cada dibujo descubre un degradado de colores.</p>
+    </div>
+  </div></section>
+
+  <section><div class="wrap video">
+    <div class="video-frame">
+      <button type="button" class="video-play" data-video="_KG6YSzw7Uo" data-title="Playink - Holographic scratch art for kids" aria-label="Reproducir el vídeo de Playink">
+        <img src="/playink/assets/img/video-poster.jpg" alt="" width="1280" height="720" loading="lazy">
+      </button>
+    </div>
+    <div class="video-copy">
+      <p class="eyebrow">En movimiento</p>
+      <h2>El brillo se entiende mejor en vídeo</h2>
+      <p>La app de verdad: rascar, cambiar de fondo e inclinar el móvil.</p>
+      <p class="small">El vídeo se reproduce desde YouTube. No se carga nada de YouTube hasta que pulsas el botón.</p>
+    </div>
+  </div></section>
+</main>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="legal"><p>Hecha por Manuel Mato, desarrollador Android.</p><p class="tm">Google Play y el logotipo de Google Play son marcas de Google LLC.</p></div>
+  <nav aria-label="Links"><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a></nav>
+</div></footer>
+
+<script src="/playink/assets/playink.js" defer></script>
+</body>
+</html>
