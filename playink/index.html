@@ -26,7 +26,7 @@
 <link rel="preload" href="/playink/assets/fonts/fredoka-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/playink/assets/fonts/atkinson-hyperlegible-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/playink/assets/playink.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Playink", "operatingSystem": "Android", "applicationCategory": "EntertainmentApplication", "description": "Scratch art drawing for kids on Android: draw with a finger and reveal a holographic foil that shines as you tilt the phone. No ads, no in-app purchases, no account.", "url": "https://mnlmato.github.io/playink/", "installUrl": "https://play.google.com/store/apps/details?id=com.playink.paint.kids", "image": "https://mnlmato.github.io/playink/assets/img/icon-256.png", "inLanguage": ["en", "es"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Manuel Mato", "url": "https://www.linkedin.com/in/manuelmatomarino"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Playink", "operatingSystem": "Android", "applicationCategory": "EntertainmentApplication", "description": "Scratch art drawing for kids on Android: draw with a finger and reveal a holographic foil that shines as you tilt the phone. No ads, no in-app purchases, no account.", "url": "https://mnlmato.github.io/playink/", "installUrl": "https://play.google.com/store/apps/details?id=com.playink.paint.kids", "image": "https://mnlmato.github.io/playink/assets/img/icon-256.png", "inLanguage": ["en", "es"], "softwareVersion": "1.4.0", "screenshot": ["https://mnlmato.github.io/playink/assets/img/shavings.jpg", "https://mnlmato.github.io/playink/assets/img/hero-picker-glitter.jpg", "https://mnlmato.github.io/playink/assets/img/hero-gold.jpg", "https://mnlmato.github.io/playink/assets/img/hero-silver.jpg", "https://mnlmato.github.io/playink/assets/img/hero-eye.jpg"], "sameAs": "https://play.google.com/store/apps/details?id=com.playink.paint.kids", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Manuel Mato", "url": "https://mnlmato.github.io/"}, "subjectOf": [{"@type": "Article", "headline": "How a holographic foil effect works in Jetpack Compose", "url": "https://medium.com/@manuelmato/how-a-holographic-foil-effect-works-in-jetpack-compose-9535d621c055", "inLanguage": "en"}, {"@type": "Article", "headline": "Cómo funciona una pegatina holográfica en un móvil Android", "url": "https://medium.com/@manuelmato/c%C3%B3mo-funciona-una-pegatina-hologr%C3%A1fica-en-un-m%C3%B3vil-android-276e2c37768f", "inLanguage": "es"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is Playink free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Playink is free, with no ads and no in-app purchases."}}, {"@type": "Question", "name": "What is scratch art?", "acceptedAnswer": {"@type": "Answer", "text": "Scratch art paper is a sheet covered with a black layer. When you scratch it, the colors underneath show through. Playink does the same on the screen, with a holographic foil underneath that moves as you tilt the phone."}}, {"@type": "Question", "name": "Which devices does it work on?", "acceptedAnswer": {"@type": "Answer", "text": "Android phones and tablets with Android 7.0 or later. The shiny backgrounds and video sharing need Android 13 or later; on earlier versions every drawing reveals a color gradient."}}, {"@type": "Question", "name": "Does it need an internet connection?", "acceptedAnswer": {"@type": "Answer", "text": "No. Drawing, saving and sharing work without a connection."}}, {"@type": "Question", "name": "Does my child need an account?", "acceptedAnswer": {"@type": "Answer", "text": "No. There is no sign-up and no login."}}, {"@type": "Question", "name": "Is there an iPhone version?", "acceptedAnswer": {"@type": "Answer", "text": "No. Playink is only available for Android, on Google Play."}}]}</script>
 </head>
 <body>
@@ -41,9 +41,9 @@
 <main>
   <div class="hero"><div class="wrap">
     <div class="hero-copy">
-      <p class="eyebrow">Scratch art for kids · Android</p>
-      <h1>Draw with your finger. <span class="foil-text">There's a hologram underneath.</span></h1>
-      <p class="lede">Playink turns your phone or tablet into magic scratch paper. Every stroke reveals a holographic foil that shines as you tilt your phone.</p>
+      <p class="eyebrow">For Android phones and tablets</p>
+      <h1>Scratch art for kids. <span class="foil-text">There's a hologram underneath.</span></h1>
+      <p class="lede">Draw with your finger and your phone or tablet becomes magic scratch paper. Every stroke reveals a holographic foil that shines as you tilt it.</p>
       <div class="cta-row">
         <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.playink.paint.kids&referrer=utm_source%3Dmnlmato.github.io%26utm_medium%3Dwebsite%26utm_campaign%3Dplayink-site-en"><img class="badge-en" src="/playink/assets/img/badge-en.png" alt="Get it on Google Play" width="646" height="250"></a>
         <p class="meta">No ads · No purchases · No account</p>
@@ -133,11 +133,20 @@
       <p class="small">The video plays from YouTube. Nothing loads from YouTube until you press play.</p>
     </div>
   </div></section>
+
+  <section><div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Behind the hologram</p>
+      <h2>How the holographic foil works</h2>
+      <p>The foil isn't a video. It's a shader that works out the color of every pixel as you tilt the phone, imitating the colors of a soap bubble and the sparkle of glitter.</p>
+      <p><a href="https://medium.com/@manuelmato/how-a-holographic-foil-effect-works-in-jetpack-compose-9535d621c055">Read “How a holographic foil effect works in Jetpack Compose” on Medium</a></p>
+    </div>
+  </div></section>
 </main>
 
 <footer class="site-footer"><div class="wrap">
   <div class="legal"><p>Made by Manuel Mato, Android developer.</p><p class="tm">Google Play and the Google Play logo are trademarks of Google LLC.</p></div>
-  <nav aria-label="Links"><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a></nav>
+  <nav aria-label="Links"><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a><a href="https://medium.com/@manuelmato">Medium</a></nav>
 </div></footer>
 
 <script src="/playink/assets/playink.js" defer></script>

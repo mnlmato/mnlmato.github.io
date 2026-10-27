@@ -13,7 +13,16 @@ def play_link(lang):
     return f"{PLAY}&referrer={referrer}"
 VIDEO = "_KG6YSzw7Uo"
 SITE_NAME = "Manuel Mato"
-LASTMOD = "2026-10-25"
+LASTMOD = "2026-10-27"
+VERSION = "1.4.0"
+MEDIUM = "https://medium.com/@manuelmato"
+# The two articles about the holographic foil (G10). Each page links the one in its language.
+ARTICLES = {
+    "en": ("How a holographic foil effect works in Jetpack Compose",
+           f"{MEDIUM}/how-a-holographic-foil-effect-works-in-jetpack-compose-9535d621c055"),
+    "es": ("Cómo funciona una pegatina holográfica en un móvil Android",
+           f"{MEDIUM}/c%C3%B3mo-funciona-una-pegatina-hologr%C3%A1fica-en-un-m%C3%B3vil-android-276e2c37768f"),
+}
 
 T = {
     "en": {
@@ -23,9 +32,9 @@ T = {
         "desc": "Scratch art drawing for kids on Android: draw with a finger and reveal a holographic foil that shines as you tilt the phone. No ads, no in-app purchases, no account.",
         "locale": "en_US",
         "badge_alt": "Get it on Google Play",
-        "eyebrow": "Scratch art for kids · Android",
-        "h1a": "Draw with your finger.", "h1b": "There's a hologram underneath.",
-        "lede": "Playink turns your phone or tablet into magic scratch paper. Every stroke reveals a holographic foil that shines as you tilt your phone.",
+        "eyebrow": "For Android phones and tablets",
+        "h1a": "Scratch art for kids.", "h1b": "There's a hologram underneath.",
+        "lede": "Draw with your finger and your phone or tablet becomes magic scratch paper. Every stroke reveals a holographic foil that shines as you tilt it.",
         "meta": "No ads · No purchases · No account",
         "wax_label": "Black demo sheet: drag your finger or mouse to scratch it and see the hologram",
         "reset": "New sheet", "hint": "Scratch here with your finger or mouse",
@@ -56,6 +65,9 @@ T = {
         "vid_p": "The real app: scratching, switching foils and tilting the phone.",
         "vid_play": "Play the Playink video",
         "vid_note": "The video plays from YouTube. Nothing loads from YouTube until you press play.",
+        "art_eyebrow": "Behind the hologram", "art_h": "How the holographic foil works",
+        "art_p": "The foil isn't a video. It's a shader that works out the color of every pixel as you tilt the phone, imitating the colors of a soap bubble and the sparkle of glitter.",
+        "art_link": "Read “{title}” on Medium",
         "faq_eyebrow": "Questions", "faq_h": "Questions parents ask",
         "faq": [
             ("Is Playink free?", "Yes. Playink is free, with no ads and no in-app purchases."),
@@ -75,9 +87,9 @@ T = {
         "desc": "Dibujos para rascar en Android: pinta con el dedo y descubre una lámina holográfica que brilla al inclinar el móvil. Sin anuncios, sin compras y sin cuenta.",
         "locale": "es_ES",
         "badge_alt": "Disponible en Google Play",
-        "eyebrow": "Dibujos para rascar · Android",
-        "h1a": "Dibuja con el dedo.", "h1b": "Debajo hay un holograma.",
-        "lede": "Playink convierte el móvil o la tablet en una lámina mágica para rascar. Cada trazo descubre una lámina holográfica que brilla al inclinar el móvil.",
+        "eyebrow": "Para móviles y tablets Android",
+        "h1a": "Dibujos para rascar.", "h1b": "Debajo hay un holograma.",
+        "lede": "Dibuja con el dedo y el móvil o la tablet se convierte en una lámina mágica para rascar. Cada trazo descubre una lámina holográfica que brilla al inclinarlo.",
         "meta": "Sin anuncios · Sin compras · Sin cuenta",
         "wax_label": "Lámina negra de demostración: arrastra el dedo o el ratón para rascarla y ver el holograma",
         "reset": "Otra lámina", "hint": "Rasca aquí con el dedo o el ratón",
@@ -108,6 +120,9 @@ T = {
         "vid_p": "La app de verdad: rascar, cambiar de fondo e inclinar el móvil.",
         "vid_play": "Reproducir el vídeo de Playink",
         "vid_note": "El vídeo se reproduce desde YouTube. No se carga nada de YouTube hasta que pulsas el botón.",
+        "art_eyebrow": "Detrás del holograma", "art_h": "Cómo funciona la lámina holográfica",
+        "art_p": "La lámina no es un vídeo. Es un shader que calcula el color de cada píxel según inclinas el móvil, imitando los colores de una pompa de jabón y el brillo de la purpurina.",
+        "art_link": "Lee «{title}» en Medium",
         "faq_eyebrow": "Preguntas", "faq_h": "Lo que suelen preguntar los padres",
         "faq": [
             ("¿Playink es gratis?", "Sí. Playink es gratis, sin anuncios y sin compras dentro de la app."),
@@ -139,9 +154,17 @@ def page(lang):
         "installUrl": PLAY,
         "image": f"{BASE}{ASSETS}/img/icon-256.png",
         "inLanguage": ["en", "es"],
+        "softwareVersion": VERSION,
+        "screenshot": [f"{BASE}{ASSETS}/img/{f}.jpg" for f, _, _ in t["shots"]],
+        "sameAs": PLAY,
         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"},
-        "author": {"@type": "Person", "name": "Manuel Mato", "url": "https://www.linkedin.com/in/manuelmatomarino"},
+        "author": {"@type": "Person", "name": "Manuel Mato", "url": BASE + "/"},
+        "subjectOf": [
+            {"@type": "Article", "headline": title, "url": link, "inLanguage": l}
+            for l, (title, link) in ARTICLES.items()
+        ],
     }
+    art_title, art_url = ARTICLES[lang]
     shots = "\n".join(
         f'      <figure class="shot"><img src="{ASSETS}/img/{f}.jpg" alt="{alt}" width="540" height="1040" loading="lazy"><figcaption>{cap}</figcaption></figure>'
         for f, alt, cap in t["shots"]
@@ -275,11 +298,20 @@ def page(lang):
       <p class="small">{t["vid_note"]}</p>
     </div>
   </div></section>
+
+  <section><div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{t["art_eyebrow"]}</p>
+      <h2>{t["art_h"]}</h2>
+      <p>{t["art_p"]}</p>
+      <p><a href="{art_url}">{t["art_link"].format(title=art_title)}</a></p>
+    </div>
+  </div></section>
 </main>
 
 <footer class="site-footer"><div class="wrap">
   <div class="legal"><p>{t["made"]}</p><p class="tm">{t["tm"]}</p></div>
-  <nav aria-label="Links"><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a></nav>
+  <nav aria-label="Links"><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a><a href="{MEDIUM}">Medium</a></nav>
 </div></footer>
 
 <script src="{ASSETS}/playink.js" defer></script>
@@ -302,7 +334,7 @@ PERSON = {
     "name": "Manuel Mato",
     "jobTitle": "Android developer",
     "url": BASE + "/",
-    "sameAs": ["https://www.linkedin.com/in/manuelmatomarino", "https://github.com/mnlmato"],
+    "sameAs": ["https://www.linkedin.com/in/manuelmatomarino", "https://github.com/mnlmato", MEDIUM],
 }
 
 HOME = f"""<!doctype html>
@@ -336,7 +368,7 @@ HOME = f"""<!doctype html>
     <img src="{ASSETS}/img/icon-256.png" alt="" width="72" height="72">
     <div><h2>Playink</h2><p>Scratch art for kids, with a holographic foil that shines as you tilt the phone.</p></div>
   </a>
-  <p><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a></p>
+  <p><a href="https://www.linkedin.com/in/manuelmatomarino">LinkedIn</a> · <a href="{MEDIUM}">Medium</a></p>
 </main>
 </body>
 </html>
